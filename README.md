@@ -1,2 +1,2 @@
 # ZCompose
-Jetpack Compose Playground
+Jetpack Compose Demo

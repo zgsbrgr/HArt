@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos
+package com.zgsbrgr.demos.hart
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.zgsbrgr.demos.ui.theme.ZComposeTheme
+import com.zgsbrgr.demos.hart.ui.theme.ZComposeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

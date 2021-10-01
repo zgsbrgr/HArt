@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.hart
+package com.zgsbrgr.demos.hart.home
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

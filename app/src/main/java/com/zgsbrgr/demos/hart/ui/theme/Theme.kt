@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.ui.theme
+package com.zgsbrgr.demos.hart.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

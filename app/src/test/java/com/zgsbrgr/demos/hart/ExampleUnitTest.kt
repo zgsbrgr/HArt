@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos
+package com.zgsbrgr.demos.hart
 
 import org.junit.Test
 

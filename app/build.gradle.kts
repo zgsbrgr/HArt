@@ -46,6 +46,8 @@ android {
 
 dependencies{
 
+    implementation(project(Modules.data))
+
     implementation(Coil.coil)
 
     implementation(Accompanist.animations)
@@ -78,4 +80,9 @@ dependencies{
     kaptAndroidTest(Hilt.compiler)
     androidTestImplementation(Junit.junit4)
     debugImplementation(Compose.tooling)
+
+    implementation(Square.okHttp)
+    implementation(Square.retrofit)
+    implementation(Square.retrofit_gson)
+
 }

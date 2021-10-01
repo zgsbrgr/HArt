@@ -1,5 +1,5 @@
 object Android {
-    const val appId = "com.zgsbrgr.demos"
+    const val appId = "com.zgsbrgr.demos.hart"
     const val compileSdk = 31
     const val minSdk = 27
     const val targetSdk = 31

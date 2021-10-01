@@ -2,6 +2,8 @@ package com.zgsbrgr.demos.hart.di
 
 import com.google.gson.GsonBuilder
 import com.zgsbrgr.demos.hart.data.network.Endpoints
+import com.zgsbrgr.demos.hart.data.network.HExhibitionService
+import com.zgsbrgr.demos.hart.data.network.HObjectService
 import com.zgsbrgr.demos.hart.data.network.HartService
 import dagger.Module
 import dagger.Provides
@@ -36,6 +38,18 @@ object NetworkModule {
     @Provides
     fun provideHartService(retrofit: Retrofit): HartService {
         return retrofit.create(HartService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideHartExhibitionService(retrofit: Retrofit): HExhibitionService {
+        return retrofit.create(HExhibitionService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideHartObjectService(retrofit: Retrofit): HObjectService {
+        return retrofit.create(HObjectService::class.java)
     }
 
 }

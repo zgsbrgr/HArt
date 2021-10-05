@@ -1,7 +1,7 @@
 package com.zgsbrgr.demos.hart.data.network.model
 
 import com.google.gson.annotations.SerializedName
-import javax.management.monitor.StringMonitor
+
 
 data class ImageDto(
 

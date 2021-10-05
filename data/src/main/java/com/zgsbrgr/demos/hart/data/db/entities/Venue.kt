@@ -21,4 +21,5 @@ data class Venue(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "full_name") val fullName: String,
     @ColumnInfo(name = "state") val state: String
+
 )

@@ -1,16 +1,43 @@
 plugins {
-    id 'java-library'
-    id 'kotlin'
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+android {
+    compileSdk Android.compileSdk
+
+    defaultConfig {
+        minSdk Android.minSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
 
-    implementation(Square.retrofit)
-    implementation(Square.retrofit_gson)
+    implementation Square.okHttp
+    implementation Square.retrofit
+    implementation Square.retrofit_gson
+
+    implementation AndroidX.roomKtx
+    api AndroidX.roomRuntime
+    kapt AnnotationProcessor.roomCompiler
+
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
+
+    androidTestImplementation(HiltTest.hiltAndroidTesting)
+    kaptAndroidTest(Hilt.compiler)
+
+
 
 }

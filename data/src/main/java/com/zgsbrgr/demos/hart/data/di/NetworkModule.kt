@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.hart.di
+package com.zgsbrgr.demos.hart.data.di
 
 import com.google.gson.GsonBuilder
 import com.zgsbrgr.demos.hart.data.network.Endpoints

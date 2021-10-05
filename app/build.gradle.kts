@@ -46,8 +46,6 @@ android {
 
 dependencies{
 
-    implementation(project(Modules.data))
-
     implementation(Coil.coil)
 
     implementation(Accompanist.animations)
@@ -55,6 +53,9 @@ dependencies{
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleVmKtx)
+
+    implementation(AndroidX.roomRuntime)
+    implementation(AndroidX.roomKtx)
 
     implementation(Compose.activity)
     implementation(Compose.ui)
@@ -71,8 +72,6 @@ dependencies{
     implementation(Kotlinx.serialization)
     implementation(Ktor.core)
 
-    implementation(SqlDelight.androidDriver)
-    
     androidTestImplementation(AndroidXTest.runner)
     androidTestImplementation(ComposeTest.uiTestJunit4)
     debugImplementation(ComposeTest.uiTestManifest)
@@ -81,8 +80,6 @@ dependencies{
     androidTestImplementation(Junit.junit4)
     debugImplementation(Compose.tooling)
 
-    implementation(Square.okHttp)
-    implementation(Square.retrofit)
-    implementation(Square.retrofit_gson)
 
 }
+

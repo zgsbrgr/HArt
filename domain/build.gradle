@@ -22,4 +22,6 @@ android {
 
 dependencies {
 
+    "implementation"(Kotlinx.coroutinesCore) // need for flows
+    implementation project(':core')
 }

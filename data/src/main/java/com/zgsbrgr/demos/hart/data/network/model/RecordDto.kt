@@ -1,6 +1,8 @@
 package com.zgsbrgr.demos.hart.data.network.model
 
 import com.google.gson.annotations.SerializedName
+import com.zgsbrgr.demos.hart.domain.model.Exhibition
+import com.zgsbrgr.demos.hart.domain.model.Poster
 
 data class RecordDto(
 
@@ -55,3 +57,27 @@ data class PosterDto(
     var caption: String?
 
     )
+
+fun RecordDto.toExhibition(): Exhibition {
+    return Exhibition(
+        exhibitionId = exhibitionId,
+        description = description,
+        images = images.toImageList(),
+        title = title,
+        primaryImageUrl = primaryImageUrl,
+        url = url,
+        endDate = endDate,
+        beginDate = beginDate,
+        lastUpdate = lastUpdate,
+        venues = venues.toVenueList(),
+        poster = posterDto.toPoster()
+
+    )
+}
+
+fun PosterDto.toPoster(): Poster {
+    return Poster(
+        imageUrl = imageUrl,
+        caption = caption?:""
+    )
+}

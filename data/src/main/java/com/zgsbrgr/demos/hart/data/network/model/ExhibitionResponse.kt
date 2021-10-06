@@ -1,6 +1,8 @@
 package com.zgsbrgr.demos.hart.data.network.model
 
 import com.google.gson.annotations.SerializedName
+import com.zgsbrgr.demos.hart.domain.model.Exhibition
+import com.zgsbrgr.demos.hart.domain.model.ResponseInfo
 
 data class ExhibitionResponse(
 
@@ -30,3 +32,19 @@ data class InfoDto(
     var next: String
 
     )
+
+fun List<RecordDto>.toExhibitionList(): List<Exhibition> {
+    return map { recordDto ->
+        recordDto.toExhibition()
+    }
+}
+
+fun InfoDto.toResponseInfo(): ResponseInfo {
+    return ResponseInfo(
+        totalRecordsPerQuery = totalRecordsPerQuery,
+        totalRecords = totalRecords,
+        pages = pages,
+        page = page,
+        nextUrl = next
+    )
+}

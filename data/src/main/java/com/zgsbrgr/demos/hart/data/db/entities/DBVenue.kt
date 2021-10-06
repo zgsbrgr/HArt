@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "venues"
 )
-data class Venue(
+data class DBVenue(
     @PrimaryKey(autoGenerate = true ) @ColumnInfo(name = "id") val id: Long = 0,
     @ColumnInfo(name = "zipcode") val zipCode: String,
     @ColumnInfo(name = "country") val country: String?,

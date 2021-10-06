@@ -9,21 +9,21 @@ import androidx.room.*
     ],
     foreignKeys = [
         ForeignKey(
-            entity = Image::class,
+            entity = DBImage::class,
             parentColumns = arrayOf("id"),
             childColumns = arrayOf("image_id"),
             onUpdate = ForeignKey.CASCADE,
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-            entity = Venue::class,
+            entity = DBVenue::class,
             parentColumns = arrayOf("id"),
             childColumns = arrayOf("venue_id"),
             onUpdate = ForeignKey.CASCADE,
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-            entity = Poster::class,
+            entity = DBPoster::class,
             parentColumns = arrayOf("id"),
             childColumns = arrayOf("poster_id"),
             onUpdate = ForeignKey.CASCADE,
@@ -31,7 +31,7 @@ import androidx.room.*
         )
     ]
 )
-data class Exhibition(
+data class DBExhibition(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Long = 0,
     @ColumnInfo(name = "image_id") val imageId: Long,
     @ColumnInfo(name = "begin_date") val beginDate: String,

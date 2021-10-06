@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "images"
 )
-data class Image(
+data class DBImage(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Long = 0,
     @ColumnInfo(name = "date") val date: String,
     @ColumnInfo(name = "copyright") val copyRight: String,

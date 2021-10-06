@@ -7,11 +7,18 @@ plugins {
 android {
     compileSdk Android.compileSdk
 
+    def Properties properties = new Properties()
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
     defaultConfig {
         minSdk Android.minSdk
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String",
+                "API_KEY",
+                properties.getProperty("apikey", ""))
 
     }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +45,7 @@ dependencies {
     androidTestImplementation(HiltTest.hiltAndroidTesting)
     kaptAndroidTest(Hilt.compiler)
 
-
+    implementation project(':domain')
+    implementation project(':core')
 
 }

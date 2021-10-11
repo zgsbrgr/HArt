@@ -58,8 +58,8 @@ data class PosterDto(
 
     )
 
-fun RecordDto.toExhibition(): Exhibition {
-    return Exhibition(
+fun RecordDto.toExhibition(): com.zgsbrgr.demos.hart.domain.model.Exhibition {
+    return com.zgsbrgr.demos.hart.domain.model.Exhibition(
         exhibitionId = exhibitionId,
         description = description,
         images = images.toImageList(),
@@ -75,9 +75,9 @@ fun RecordDto.toExhibition(): Exhibition {
     )
 }
 
-fun PosterDto.toPoster(): Poster {
-    return Poster(
+fun PosterDto.toPoster(): com.zgsbrgr.demos.hart.domain.model.Poster {
+    return com.zgsbrgr.demos.hart.domain.model.Poster(
         imageUrl = imageUrl,
-        caption = caption?:""
+        caption = caption ?: ""
     )
 }

@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk Android.compileSdk
+
+    defaultConfig {
+        minSdk Android.minSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation project(":data")
+    implementation project(":domain")
+
+    implementation(Hilt.android)
+    kapt(Hilt.compiler)
+
+    androidTestImplementation(HiltTest.hiltAndroidTesting)
+    kaptAndroidTest(Hilt.compiler)
+}

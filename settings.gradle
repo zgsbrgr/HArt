@@ -8,5 +8,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ZCompose"
 include ':app'
-include ':domain'
 include ':data'
+include ':domain'
+include ':core'
+include ':domain:interactors'
+include ':domain:model'

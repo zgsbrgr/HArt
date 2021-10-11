@@ -6,13 +6,13 @@ import com.zgsbrgr.demos.hart.core.util.BackgroundDispatcher
 import com.zgsbrgr.demos.hart.data.network.HExhibitionService
 import com.zgsbrgr.demos.hart.data.network.model.toExhibitionList
 import com.zgsbrgr.demos.hart.data.network.model.toResponseInfo
+import com.zgsbrgr.demos.hart.domain.interactors.ExhibitionRepository
 import com.zgsbrgr.demos.hart.domain.model.Exhibition
 import com.zgsbrgr.demos.hart.domain.model.ResponseInfo
-import com.zgsbrgr.demos.hart.domain.repositories.ExhibitionRepository
+
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -21,7 +21,7 @@ class ExhibitionRepositoryImpl
     @Inject constructor(
         private val exhibitionService: HExhibitionService,
         private val backgroundDispatcher: BackgroundDispatcher
-    ):ExhibitionRepository {
+    ): ExhibitionRepository {
 
     override suspend fun getExhibitions(): Flow<Result<Pair<ResponseInfo,List<Exhibition>>>> = flow {
 

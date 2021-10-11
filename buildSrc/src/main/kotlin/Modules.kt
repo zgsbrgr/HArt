@@ -10,4 +10,8 @@ object Modules {
 
     const val interactor = ":interactor"
 
+    const val domainModels = ":domain:model"
+
+    const val domainInteractor = ":domain:interactors"
+
 }

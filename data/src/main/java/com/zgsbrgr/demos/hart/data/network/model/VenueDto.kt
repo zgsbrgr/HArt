@@ -1,7 +1,6 @@
 package com.zgsbrgr.demos.hart.data.network.model
 
 import com.google.gson.annotations.SerializedName
-import com.zgsbrgr.demos.hart.data.db.entities.DBVenue
 import com.zgsbrgr.demos.hart.domain.model.Venue
 
 
@@ -45,23 +44,23 @@ data class VenueDto(
 
     )
 
-fun VenueDto.toVenue(): Venue {
-    return Venue(
+fun VenueDto.toVenue(): com.zgsbrgr.demos.hart.domain.model.Venue {
+    return com.zgsbrgr.demos.hart.domain.model.Venue(
         id = venueId,
         zipCode = zipCode,
-        country = country?:"",
+        country = country ?: "",
         beginDate = beginDate,
-        endDate =  endDate,
-        name =  name,
+        endDate = endDate,
+        name = name,
         city = city,
         fullName = fullName,
         primaryAddress = address1,
-        secondaryAddress = address2?:"",
+        secondaryAddress = address2 ?: "",
         state = state
     )
 }
 
-fun List<VenueDto>.toVenueList(): List<Venue> {
+fun List<VenueDto>.toVenueList(): List<com.zgsbrgr.demos.hart.domain.model.Venue> {
     return map { venueDto ->
         venueDto.toVenue()
     }

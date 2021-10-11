@@ -53,22 +53,22 @@ data class ImageDto(
 
     )
 
-fun ImageDto.toImage(): Image {
-    return Image(
+fun ImageDto.toImage(): com.zgsbrgr.demos.hart.domain.model.Image {
+    return com.zgsbrgr.demos.hart.domain.model.Image(
         id = imageId,
         format = format,
         date = dateStr,
-        description = description?:"",
-        caption = caption?:"",
+        description = description ?: "",
+        caption = caption ?: "",
         baseImageUrl = baseImageUrl,
         width = width,
         height = height,
-        technique = technique?:""
+        technique = technique ?: ""
     )
 
 }
 
-fun List<ImageDto>.toImageList(): List<Image> {
+fun List<ImageDto>.toImageList(): List<com.zgsbrgr.demos.hart.domain.model.Image> {
     return this.map { imageDto ->
         imageDto.toImage()
     }

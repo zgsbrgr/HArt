@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 import com.zgsbrgr.demos.hart.domain.model.Exhibition
 import com.zgsbrgr.demos.hart.domain.model.ResponseInfo
 
+
 data class ExhibitionResponse(
 
     @SerializedName("records")
@@ -33,14 +34,14 @@ data class InfoDto(
 
     )
 
-fun List<RecordDto>.toExhibitionList(): List<Exhibition> {
+fun List<RecordDto>.toExhibitionList(): List<com.zgsbrgr.demos.hart.domain.model.Exhibition> {
     return map { recordDto ->
         recordDto.toExhibition()
     }
 }
 
-fun InfoDto.toResponseInfo(): ResponseInfo {
-    return ResponseInfo(
+fun InfoDto.toResponseInfo(): com.zgsbrgr.demos.hart.domain.model.ResponseInfo {
+    return com.zgsbrgr.demos.hart.domain.model.ResponseInfo(
         totalRecordsPerQuery = totalRecordsPerQuery,
         totalRecords = totalRecords,
         pages = pages,

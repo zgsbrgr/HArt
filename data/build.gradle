@@ -45,7 +45,8 @@ dependencies {
     androidTestImplementation(HiltTest.hiltAndroidTesting)
     kaptAndroidTest(Hilt.compiler)
 
-    implementation project(':domain')
+    implementation project(':domain:interactors')
+    implementation project(':domain:model')
     implementation project(':core')
 
 }

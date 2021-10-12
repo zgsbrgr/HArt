@@ -7,7 +7,7 @@ import com.zgsbrgr.demos.hart.domain.model.Image
 data class ImageDto(
 
     @SerializedName("date")
-    var dateStr: String,
+    var dateStr: String?,
 
     @SerializedName("copyright")
     var copyright: String,
@@ -53,11 +53,11 @@ data class ImageDto(
 
     )
 
-fun ImageDto.toImage(): com.zgsbrgr.demos.hart.domain.model.Image {
-    return com.zgsbrgr.demos.hart.domain.model.Image(
+fun ImageDto.toImage(): Image {
+    return Image(
         id = imageId,
         format = format,
-        date = dateStr,
+        date = dateStr?:"",
         description = description ?: "",
         caption = caption ?: "",
         baseImageUrl = baseImageUrl,
@@ -68,7 +68,7 @@ fun ImageDto.toImage(): com.zgsbrgr.demos.hart.domain.model.Image {
 
 }
 
-fun List<ImageDto>.toImageList(): List<com.zgsbrgr.demos.hart.domain.model.Image> {
+fun List<ImageDto>.toImageList(): List<Image> {
     return this.map { imageDto ->
         imageDto.toImage()
     }

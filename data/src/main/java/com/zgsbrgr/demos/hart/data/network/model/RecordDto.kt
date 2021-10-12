@@ -13,7 +13,7 @@ data class RecordDto(
     var beginDate: String,
 
     @SerializedName("description")
-    var description: String,
+    var description: String?,
 
     @SerializedName("exhibitonid")
     var exhibitionId: Int,
@@ -31,10 +31,10 @@ data class RecordDto(
     var url: String,
 
     @SerializedName("enddate")
-    var endDate: String,
+    var endDate: String?,
 
-    @SerializedName("venues")
-    var venues: List<VenueDto> = emptyList(),
+//    @SerializedName("venues")
+//    var venues: List<VenueDto> = emptyList(),
 
     @SerializedName("id")
     var id: Int,
@@ -58,25 +58,25 @@ data class PosterDto(
 
     )
 
-fun RecordDto.toExhibition(): com.zgsbrgr.demos.hart.domain.model.Exhibition {
-    return com.zgsbrgr.demos.hart.domain.model.Exhibition(
+fun RecordDto.toExhibition(): Exhibition {
+    return Exhibition(
         exhibitionId = exhibitionId,
-        description = description,
+        description = description?:"",
         images = images.toImageList(),
         title = title,
         primaryImageUrl = primaryImageUrl,
         url = url,
-        endDate = endDate,
+        endDate = endDate?:"",
         beginDate = beginDate,
         lastUpdate = lastUpdate,
-        venues = venues.toVenueList(),
+        //venues = venues?.toVenueList(),
         poster = posterDto.toPoster()
 
     )
 }
 
-fun PosterDto.toPoster(): com.zgsbrgr.demos.hart.domain.model.Poster {
-    return com.zgsbrgr.demos.hart.domain.model.Poster(
+fun PosterDto.toPoster(): Poster {
+    return Poster(
         imageUrl = imageUrl,
         caption = caption ?: ""
     )

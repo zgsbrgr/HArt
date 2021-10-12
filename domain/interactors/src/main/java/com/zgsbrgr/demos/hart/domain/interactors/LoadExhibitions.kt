@@ -10,7 +10,13 @@ class LoadExhibitions @Inject constructor(
     private val exhibitionRepository: ExhibitionRepository
 ) {
 
-    suspend operator fun invoke(): Flow<Result<Pair<ResponseInfo, List<Exhibition>>>> {
+    fun retrieveExhibitions(): Flow<Result<Pair<ResponseInfo, List<Exhibition>>>> {
         return exhibitionRepository.getExhibitions()
     }
+
+    fun callTestFunctionOnRepo(): String {
+        return exhibitionRepository.test()
+    }
+
+
 }

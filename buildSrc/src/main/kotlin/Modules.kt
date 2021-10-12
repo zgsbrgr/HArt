@@ -14,4 +14,6 @@ object Modules {
 
     const val domainInteractor = ":domain:interactors"
 
+    const val uiExhibitionList = ":ui-exhibitonlist"
+
 }

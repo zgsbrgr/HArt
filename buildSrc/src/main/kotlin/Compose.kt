@@ -9,7 +9,7 @@ object Compose {
     const val tooling = "androidx.compose.ui:ui-tooling:$composeVersion"
     const val preview = "androidx.compose.ui:ui-tooling-preview:$composeVersion"
 
-    private const val navigationVersion = "2.4.0-alpha10"
+    private const val navigationVersion = "2.4.0-alpha04"
     const val navigation = "androidx.navigation:navigation-compose:$navigationVersion"
 
     private const val hiltNavigationComposeVersion = "1.0.0-alpha03"

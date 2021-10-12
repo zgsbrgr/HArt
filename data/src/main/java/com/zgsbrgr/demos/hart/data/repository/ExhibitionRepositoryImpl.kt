@@ -1,11 +1,13 @@
 package com.zgsbrgr.demos.hart.data.repository
 
+import android.util.Log
 import com.zgsbrgr.demos.hart.core.domain.LoadingState
 import com.zgsbrgr.demos.hart.core.domain.Result
 import com.zgsbrgr.demos.hart.core.util.BackgroundDispatcher
 import com.zgsbrgr.demos.hart.data.network.HExhibitionService
 import com.zgsbrgr.demos.hart.data.network.model.toExhibitionList
 import com.zgsbrgr.demos.hart.data.network.model.toResponseInfo
+import com.zgsbrgr.demos.hart.domain.interactors.BuildConfig
 import com.zgsbrgr.demos.hart.domain.interactors.ExhibitionRepository
 import com.zgsbrgr.demos.hart.domain.model.Exhibition
 import com.zgsbrgr.demos.hart.domain.model.ResponseInfo
@@ -16,20 +18,21 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+
 class ExhibitionRepositoryImpl
     @Inject constructor(
         private val exhibitionService: HExhibitionService,
         private val backgroundDispatcher: BackgroundDispatcher
     ): ExhibitionRepository {
 
-    override suspend fun getExhibitions(): Flow<Result<Pair<ResponseInfo,List<Exhibition>>>> = flow {
+    override fun getExhibitions(): Flow<Result<Pair<ResponseInfo,List<Exhibition>>>> = flow {
 
         try {
+            Log.d("called", "")
             emit(Result.Loading(LoadingState.Loading))
 
             val response = try {
-                exhibitionService.getExhibitions("", 1)
+                exhibitionService.getExhibitions( com.zgsbrgr.demos.hart.data.BuildConfig.API_KEY , 1)
             }catch (e: Exception) {
                 emit(Result.Error(e))
                 null
@@ -46,9 +49,15 @@ class ExhibitionRepositoryImpl
                 )
             }
 
+
+        }catch (e: Exception) {
+            e.printStackTrace()
+            emit(Result.Error(e))
         }finally {
             emit(Result.Loading(LoadingState.Idle))
         }
 
     }.flowOn(backgroundDispatcher)
+
+
 }

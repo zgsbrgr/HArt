@@ -54,8 +54,8 @@ dependencies{
     implementation(AndroidX.appCompat)
     implementation(AndroidX.lifecycleVmKtx)
 
-    implementation(AndroidX.roomRuntime)
-    implementation(AndroidX.roomKtx)
+    //implementation(AndroidX.roomRuntime)
+    //implementation(AndroidX.roomKtx)
 
     implementation(Compose.activity)
     implementation(Compose.ui)
@@ -70,7 +70,7 @@ dependencies{
     kapt(Hilt.compiler)
 
     implementation(Kotlinx.serialization)
-    implementation(Ktor.core)
+    //implementation(Ktor.core)
 
     androidTestImplementation(AndroidXTest.runner)
     androidTestImplementation(ComposeTest.uiTestJunit4)
@@ -80,6 +80,15 @@ dependencies{
     androidTestImplementation(Junit.junit4)
     debugImplementation(Compose.tooling)
 
+    implementation(project(Modules.uiExhibitionList))
+    implementation(project(Modules.domainInteractor))
+    implementation(project(Modules.domainModels))
+    implementation(project(Modules.data))
+    implementation(project(Modules.core))
+
+    implementation(Square.okHttp)
+    implementation(Square.retrofit)
+    implementation(Square.retrofit_gson)
 
 }
 

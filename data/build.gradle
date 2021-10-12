@@ -34,6 +34,7 @@ dependencies {
     implementation Square.okHttp
     implementation Square.retrofit
     implementation Square.retrofit_gson
+    implementation Square.okHttpLogging
 
     implementation AndroidX.roomKtx
     api AndroidX.roomRuntime
@@ -42,8 +43,8 @@ dependencies {
     implementation(Hilt.android)
     kapt(Hilt.compiler)
 
-    androidTestImplementation(HiltTest.hiltAndroidTesting)
-    kaptAndroidTest(Hilt.compiler)
+//    androidTestImplementation(HiltTest.hiltAndroidTesting)
+//    kaptAndroidTest(Hilt.compiler)
 
     implementation project(':domain:interactors')
     implementation project(':domain:model')

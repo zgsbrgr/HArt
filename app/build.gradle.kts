@@ -72,6 +72,10 @@ dependencies{
     implementation(Kotlinx.serialization)
     //implementation(Ktor.core)
 
+    implementation(Square.okHttp)
+    implementation(Square.retrofit)
+    implementation(Square.retrofit_gson)
+
     androidTestImplementation(AndroidXTest.runner)
     androidTestImplementation(ComposeTest.uiTestJunit4)
     debugImplementation(ComposeTest.uiTestManifest)
@@ -85,10 +89,9 @@ dependencies{
     implementation(project(Modules.domainModels))
     implementation(project(Modules.data))
     implementation(project(Modules.core))
+    implementation(project(Modules.commonUiCompose))
 
-    implementation(Square.okHttp)
-    implementation(Square.retrofit)
-    implementation(Square.retrofit_gson)
+
 
 }
 

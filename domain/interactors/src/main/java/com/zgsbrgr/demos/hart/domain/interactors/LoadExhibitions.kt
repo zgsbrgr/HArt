@@ -13,10 +13,6 @@ class LoadExhibitions @Inject constructor(
     fun retrieveExhibitions(): Flow<Result<Pair<ResponseInfo, List<Exhibition>>>> {
         return exhibitionRepository.getExhibitions()
     }
-
-    fun callTestFunctionOnRepo(): String {
-        return exhibitionRepository.test()
-    }
-
+    
 
 }

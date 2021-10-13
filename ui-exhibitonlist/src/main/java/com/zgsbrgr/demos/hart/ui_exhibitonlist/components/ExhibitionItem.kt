@@ -18,6 +18,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.ImageLoader
 import coil.compose.rememberImagePainter
+import com.zgsbrgr.demos.hart.common_ui_compose.theme.ZComposeTheme
+import com.zgsbrgr.demos.hart.common_ui_compose.theme.ZHartTypography
 import com.zgsbrgr.demos.hart.domain.model.Exhibition
 import kotlin.math.round
 

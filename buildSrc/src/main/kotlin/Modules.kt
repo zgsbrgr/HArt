@@ -16,4 +16,6 @@ object Modules {
 
     const val uiExhibitionList = ":ui-exhibitonlist"
 
+    const val commonUiCompose = ":common-ui-compose"
+
 }

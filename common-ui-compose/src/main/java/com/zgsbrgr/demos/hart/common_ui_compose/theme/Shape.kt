@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.hart.ui.theme
+package com.zgsbrgr.demos.hart.common_ui_compose.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

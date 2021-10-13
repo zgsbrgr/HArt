@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.hart.ui.theme
+package com.zgsbrgr.demos.hart.common_ui_compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -37,7 +37,7 @@ fun ZComposeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = ZHartTypography,
         shapes = Shapes,
         content = content
     )

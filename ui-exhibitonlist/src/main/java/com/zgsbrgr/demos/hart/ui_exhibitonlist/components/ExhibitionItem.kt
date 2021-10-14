@@ -33,10 +33,10 @@ fun ExhibitionItem(
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 8.dp)
+            .padding(bottom = 8.dp, start = 8.dp, end = 8.dp)
             .background(MaterialTheme.colors.surface)
             .clickable {
-                onSelectExhibition(exhibition.exhibitionId)
+                //onSelectExhibition(exhibition.exhibitionId)
             }
         ,
         elevation = 8.dp
@@ -57,7 +57,7 @@ fun ExhibitionItem(
             Image(
                 modifier = Modifier
                     .width(120.dp)
-                    .height(70.dp)
+                    .height(200.dp)
                 ,
                 painter = painter,
                 contentDescription = exhibition.title,
@@ -74,7 +74,7 @@ fun ExhibitionItem(
                         .testTag("TAG_EXHIBITION_TITLE")
                     ,
                     text = exhibition.title,
-                    style = MaterialTheme.typography.h4,
+                    style = MaterialTheme.typography.subtitle1,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -82,8 +82,10 @@ fun ExhibitionItem(
                     modifier = Modifier
                         .testTag("TAG_HERO_PRIMARY_ATTRIBUTE")
                     ,
-                    text = exhibition.description,
-                    style = MaterialTheme.typography.subtitle1,
+                    text = exhibition.description.let {
+                        if(it.isEmpty()) "here comes the description" else it
+                    }, //exhibition.description,
+                    style = MaterialTheme.typography.subtitle2,
                 )
             }
 

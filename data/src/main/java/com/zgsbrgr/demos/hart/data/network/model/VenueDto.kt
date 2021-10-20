@@ -7,25 +7,25 @@ import com.zgsbrgr.demos.hart.domain.model.Venue
 data class VenueDto(
 
     @SerializedName("zipcode")
-    var zipCode: String,
+    var zipCode: String?,
 
     @SerializedName("country")
     var country: String?,
 
     @SerializedName("begindate")
-    var beginDate: String,
+    var beginDate: String?,
 
     @SerializedName("enddate")
-    var endDate: String,
+    var endDate: String?,
 
     @SerializedName("address2")
     var address2: String?,
 
     @SerializedName("city")
-    var city: String,
+    var city: String?,
 
     @SerializedName("address1")
-    var address1: String,
+    var address1: String?,
 
     @SerializedName("venueid")
     var venueId: Int,
@@ -34,33 +34,33 @@ data class VenueDto(
     var isHamVenue: Int,
 
     @SerializedName("name")
-    var name: String,
+    var name: String?,
 
     @SerializedName("fullname")
-    var fullName: String,
+    var fullName: String?,
 
     @SerializedName("state")
-    var state: String
+    var state: String?
 
     )
 
-fun VenueDto.toVenue(): com.zgsbrgr.demos.hart.domain.model.Venue {
-    return com.zgsbrgr.demos.hart.domain.model.Venue(
+fun VenueDto.toVenue(): Venue {
+    return Venue(
         id = venueId,
-        zipCode = zipCode,
+        zipCode = zipCode ?: "",
         country = country ?: "",
-        beginDate = beginDate,
-        endDate = endDate,
-        name = name,
-        city = city,
-        fullName = fullName,
-        primaryAddress = address1,
+        beginDate = beginDate?: "",
+        endDate = endDate?: "",
+        name = name?: "",
+        city = city?: "",
+        fullName = fullName?: "",
+        primaryAddress = address1?: "",
         secondaryAddress = address2 ?: "",
-        state = state
+        state = state?: ""
     )
 }
 
-fun List<VenueDto>.toVenueList(): List<com.zgsbrgr.demos.hart.domain.model.Venue> {
+fun List<VenueDto>.toVenueList(): List<Venue> {
     return map { venueDto ->
         venueDto.toVenue()
     }

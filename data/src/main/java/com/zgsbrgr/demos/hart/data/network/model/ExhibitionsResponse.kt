@@ -30,22 +30,22 @@ data class InfoDto(
     var page: Int,
 
     @SerializedName("next")
-    var next: String
+    var next: String?
 
     )
 
-fun List<RecordDto>.toExhibitionList(): List<com.zgsbrgr.demos.hart.domain.model.Exhibition> {
+fun List<RecordDto>.toExhibitionList(): List<Exhibition> {
     return map { recordDto ->
         recordDto.toExhibition()
     }
 }
 
-fun InfoDto.toResponseInfo(): com.zgsbrgr.demos.hart.domain.model.ResponseInfo {
-    return com.zgsbrgr.demos.hart.domain.model.ResponseInfo(
+fun InfoDto.toResponseInfo():ResponseInfo {
+    return ResponseInfo(
         totalRecordsPerQuery = totalRecordsPerQuery,
         totalRecords = totalRecords,
         pages = pages,
         page = page,
-        nextUrl = next
+        nextUrl = next?:""
     )
 }

@@ -33,8 +33,8 @@ data class RecordDto(
     @SerializedName("enddate")
     var endDate: String?,
 
-//    @SerializedName("venues")
-//    var venues: List<VenueDto> = emptyList(),
+    @SerializedName("venues")
+    var venues: List<VenueDto> = emptyList(),
 
     @SerializedName("id")
     var id: Int,
@@ -69,7 +69,7 @@ fun RecordDto.toExhibition(): Exhibition {
         endDate = endDate?:"",
         beginDate = beginDate,
         lastUpdate = lastUpdate,
-        //venues = venues?.toVenueList(),
+        venues = venues.toVenueList(),
         poster = posterDto.toPoster()
 
     )

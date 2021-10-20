@@ -11,7 +11,7 @@ data class Exhibition(
     val endDate: String,
     val beginDate: String,
     val lastUpdate: String,
-    //val venues: List<Venue>,
+    val venues: List<Venue>,
     val poster: Poster
     )
 

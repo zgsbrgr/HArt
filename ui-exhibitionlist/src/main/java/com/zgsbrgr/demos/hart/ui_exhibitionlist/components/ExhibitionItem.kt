@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.hart.ui_exhibitonlist.components
+package com.zgsbrgr.demos.hart.ui_exhibitionlist.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,14 +20,16 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.ImageLoader
+import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.zgsbrgr.demos.hart.common_ui_compose.theme.ZComposeTheme
 import com.zgsbrgr.demos.hart.common_ui_compose.theme.ZHartTypography
 import com.zgsbrgr.demos.hart.domain.model.Exhibition
-import com.zgsbrgr.demos.hart.ui_exhibitonlist.ExhibitionListUiState
-import com.zgsbrgr.demos.hart.ui_exhibitonlist.ExhibitionListViewModel
+import com.zgsbrgr.demos.hart.ui_exhibitionlist.ExhibitionListUiState
+import com.zgsbrgr.demos.hart.ui_exhibitionlist.ExhibitionListViewModel
 import kotlin.math.round
 
+@ExperimentalCoilApi
 @Composable
 fun ExhibitionItem(
     exhibition: Exhibition,
@@ -41,7 +43,7 @@ fun ExhibitionItem(
             .padding(bottom = 8.dp, start = 8.dp, end = 8.dp)
             .background(MaterialTheme.colors.surface)
             .clickable {
-                //onSelectExhibition(exhibition.exhibitionId)
+                onSelectExhibition(exhibition.exhibitionId)
             }
         ,
         elevation = 8.dp

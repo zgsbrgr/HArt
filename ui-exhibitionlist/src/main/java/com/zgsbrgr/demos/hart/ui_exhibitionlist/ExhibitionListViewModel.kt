@@ -1,4 +1,4 @@
-package com.zgsbrgr.demos.hart.ui_exhibitonlist
+package com.zgsbrgr.demos.hart.ui_exhibitionlist
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
@@ -42,7 +42,7 @@ class ExhibitionListViewModel
     }
 
 
-    fun refreshExhibitions() {
+    private fun refreshExhibitions() {
 
         _uiState.update {
             it.copy(loading = true)

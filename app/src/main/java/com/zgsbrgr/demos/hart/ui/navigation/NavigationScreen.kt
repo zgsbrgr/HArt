@@ -1,5 +1,7 @@
 package com.zgsbrgr.demos.hart.ui.navigation
 
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NamedNavArgument
 import androidx.navigation.compose.navArgument
@@ -20,4 +22,13 @@ sealed class NavigationScreen(val route: String, val arguments: List<NamedNavArg
         })
     )
 
+}
+
+class MainActions(navController: NavController) {
+    val navigateToExhibitionDetail: (Int) -> Unit = { exhibitionId: Int ->
+        navController.navigate("${NavigationScreen.ExhibitionDetail.route}/$exhibitionId")
+    }
+    val upPress: () -> Unit = {
+        navController.navigateUp()
+    }
 }

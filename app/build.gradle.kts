@@ -85,6 +85,7 @@ dependencies{
     debugImplementation(Compose.tooling)
 
     implementation(project(Modules.uiExhibitionList))
+    implementation(project(Modules.uiExhibitionDetail))
     implementation(project(Modules.domainInteractor))
     implementation(project(Modules.domainModels))
     implementation(project(Modules.data))

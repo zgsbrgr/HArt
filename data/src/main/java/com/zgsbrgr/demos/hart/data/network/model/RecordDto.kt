@@ -15,7 +15,7 @@ data class RecordDto(
     @SerializedName("description")
     var description: String?,
 
-    @SerializedName("exhibitonid")
+    @SerializedName("exhibitionid")
     var exhibitionId: Int,
 
     @SerializedName("title")

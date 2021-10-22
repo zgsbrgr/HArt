@@ -18,7 +18,7 @@ data class ExhibitionDto(
     @SerializedName("id")
     var id: Int,
     @SerializedName("images")
-    var images: List<ImageDto> = emptyList(),
+    var images: List<ImageDto>?,
     @SerializedName("lastupdate")
     var lastupdate: String?,
     @SerializedName("poster")
@@ -26,7 +26,7 @@ data class ExhibitionDto(
     @SerializedName("primaryimageurl")
     var primaryimageurl: String?,
     @SerializedName("publications")
-    var publications: List<PublicationDto> = emptyList(),
+    var publications: List<PublicationDto>?,
     @SerializedName("shortdescription")
     var shortdescription: String?,
     @SerializedName("temporalorder")
@@ -34,9 +34,9 @@ data class ExhibitionDto(
     @SerializedName("title")
     var title: String?,
     @SerializedName("venues")
-    var venues: List<VenueDto> = emptyList(),
+    var venues: List<VenueDto>?,
     @SerializedName("videos")
-    var videos: List<VideoDto> = emptyList()
+    var videos: List<VideoDto>?
 )
 
 fun ExhibitionDto.toSingleExhibition(): SingleExhibition {
@@ -47,15 +47,15 @@ fun ExhibitionDto.toSingleExhibition(): SingleExhibition {
         description = description?:"",
         exhibitionId = exhibitionid,
         id = id,
-        images = images.toImageList(),
+        images = images?.toImageList() ?: emptyList(),
         lastUpdate = lastupdate?:"",
         poster = poster?.toPoster(),
         primaryImageUrl = primaryimageurl?:"",
-        publications = publications.toPublicationList(),
+        publications = publications?.toPublicationList() ?: emptyList(),
         shortDescription = shortdescription?:"",
         temporalOrder = temporalorder,
         title = title?:"",
-        venues = venues.toVenueList(),
-        videos = videos.toVideoList()
+        venues = venues?.toVenueList() ?: emptyList(),
+        videos = videos?.toVideoList() ?: emptyList()
     )
 }

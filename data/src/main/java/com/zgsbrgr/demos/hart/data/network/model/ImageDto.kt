@@ -10,7 +10,7 @@ data class ImageDto(
     var dateStr: String?,
 
     @SerializedName("copyright")
-    var copyright: String,
+    var copyright: String?,
 
     @SerializedName("imageid")
     var imageId: Int,
@@ -19,7 +19,7 @@ data class ImageDto(
     var idsid: Int,
 
     @SerializedName("format")
-    var format: String,
+    var format: String?,
 
     @SerializedName("caption")
     var caption: String?,
@@ -31,13 +31,13 @@ data class ImageDto(
     var technique: String?,
 
     @SerializedName("renditionnumber")
-    var renditionNumber: String,
+    var renditionNumber: String?,
 
     @SerializedName("displayorder")
     var displayOrder: Int,
 
     @SerializedName("baseimageurl")
-    var baseImageUrl: String,
+    var baseImageUrl: String?,
 
     @SerializedName("alttext")
     var altText: String?,
@@ -49,18 +49,18 @@ data class ImageDto(
     var height: Int,
 
     @SerializedName("iiifbaseuri")
-    var iiifbaseuri: String
+    var iiifbaseuri: String?
 
     )
 
 fun ImageDto.toImage(): Image {
     return Image(
         id = imageId,
-        format = format,
+        format = format?:"",
         date = dateStr?:"",
         description = description ?: "",
         caption = caption ?: "",
-        baseImageUrl = baseImageUrl,
+        baseImageUrl = baseImageUrl?:"",
         width = width,
         height = height,
         technique = technique ?: ""

@@ -9,18 +9,23 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.ImageLoader
 import coil.compose.rememberImagePainter
 import com.zgsbrgr.demos.hart.common_ui_compose.theme.ZComposeTheme
 import com.zgsbrgr.demos.hart.common_ui_compose.theme.ZHartTypography
 import com.zgsbrgr.demos.hart.domain.model.Exhibition
+import com.zgsbrgr.demos.hart.ui_exhibitonlist.ExhibitionListUiState
+import com.zgsbrgr.demos.hart.ui_exhibitonlist.ExhibitionListViewModel
 import kotlin.math.round
 
 @Composable
@@ -89,7 +94,9 @@ fun ExhibitionItem(
                 )
             }
 
+
         }
     }
 
 }
+

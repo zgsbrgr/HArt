@@ -66,7 +66,7 @@ class ExhibitionRepositoryImpl
     override suspend fun getExhibition(exhibitionId: Int): Result<SingleExhibition> = withContext(backgroundDispatcher) {
         return@withContext try {
 
-            val response = exhibitionService.getExhibition( com.zgsbrgr.demos.hart.data.BuildConfig.API_KEY, exhibitionId)
+            val response = exhibitionService.getExhibition( exhibitionId, com.zgsbrgr.demos.hart.data.BuildConfig.API_KEY)
             Result.Success(response.toSingleExhibition())
 
         }catch (e: Exception) {

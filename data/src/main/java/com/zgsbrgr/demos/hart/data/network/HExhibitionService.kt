@@ -18,8 +18,8 @@ interface HExhibitionService {
 
     @GET("exhibition/{id}")
     suspend fun getExhibition(
-        @Query("apikey") apiKey: String = BuildConfig.API_KEY,
-        @Path("id") id: Int
+        @Path("id") id: Int,
+        @Query("apikey") apiKey: String = BuildConfig.API_KEY
     ): ExhibitionDto
 
 }

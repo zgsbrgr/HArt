@@ -11,6 +11,8 @@ data class ExhibitionDto(
     var color: String?,
     @SerializedName("description")
     var description: String?,
+    @SerializedName("textiledescription")
+    var textileDescription: String?,
     @SerializedName("enddate")
     var enddate: String?,
     @SerializedName("exhibitionid")
@@ -45,6 +47,7 @@ fun ExhibitionDto.toSingleExhibition(): SingleExhibition {
         endDate = enddate?:"",
         color = color?:"",
         description = description?:"",
+        textileDescription = textileDescription?:"",
         exhibitionId = exhibitionid,
         id = id,
         images = images?.toImageList() ?: emptyList(),

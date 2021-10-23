@@ -5,6 +5,7 @@ data class SingleExhibition(
     val endDate: String,
     val color: String,
     val description: String,
+    val textileDescription: String,
     val exhibitionId: Int,
     val id: Int,
     val images: List<Image>,

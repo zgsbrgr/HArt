@@ -62,14 +62,11 @@ class MainActivity : ComponentActivity() {
                         builder = {
                             addExhibitionList(
                                 navController = navController,
-                                imageLoader = imageLoader,
-                                resources = resources
-
+                                imageLoader = imageLoader
                             )
                             addExhibitionDetail(
                                 navController = navController,
-                                imageLoader = imageLoader,
-                                resources = resources
+                                imageLoader = imageLoader
                             )
 
                         }
@@ -89,7 +86,7 @@ class MainActivity : ComponentActivity() {
 fun NavGraphBuilder.addExhibitionList(
     navController: NavController,
     imageLoader: ImageLoader,
-    resources: Resources
+
 ) {
     composable(
         route = NavigationScreen.ExhibitionList.route
@@ -100,19 +97,18 @@ fun NavGraphBuilder.addExhibitionList(
         ExhibitionList(
             state = uiState,
             navigateToDetailScreen = actions.navigateToExhibitionDetail,
-            imageLoader = imageLoader,
-            resources = resources
+            imageLoader = imageLoader
 
         )
 
     }
 }
 
+@ExperimentalCoilApi
 @ExperimentalAnimationApi
 fun NavGraphBuilder.addExhibitionDetail(
     navController: NavController,
-    imageLoader: ImageLoader,
-    resources: Resources
+    imageLoader: ImageLoader
 ) {
     composable(
         route = NavigationScreen.ExhibitionDetail.route + "/{exhibitionId}",
